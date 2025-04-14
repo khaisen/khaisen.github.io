@@ -1,0 +1,347 @@
+/* Base styles */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  line-height: 1.6;
+  background-color: #F0F2F5;
+  color: #12264C;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #1C3D90;
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  height: 50px;
+  object-fit: contain;
+  background-color: white;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #2A57C4;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+.banner {
+  background: linear-gradient(rgba(28, 61, 144, 0.6), rgba(28, 61, 144, 0.6)),
+              url('images/web-banner.png') no-repeat center center/cover;
+  text-align: center;
+  padding: 5rem 1rem;
+  color: white;
+  min-height: 400px;
+}
+
+.mission-vision {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  background: white;
+}
+
+/* Testimonial Section */
+.testimonial {
+  background-color: #fff;
+  padding: 3rem 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.testimonial-slider {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonial-item {
+  display: none;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 250px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.testimonial-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-text {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  text-align: left;
+}
+
+.slider-btn {
+  margin-top: 1rem;
+  background-color: #1C3D90;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.slider-btn:hover {
+  background-color: #2A57C4;
+}
+
+/* Spiritual Life Section */
+.spiritual-life {
+  padding: 3rem 1rem;
+  background: #fff;
+}
+
+.spiritual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.spiritual-block {
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
+
+/* Events Section */
+.events {
+  background: #F9FAFC;
+  padding: 3rem 1rem;
+}
+
+.event-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.event-image img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.event-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.event-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #1C3D90;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.read-more:hover {
+  background-color: #2A57C4;
+}
+
+/* Affiliates Section */
+.affiliates {
+  padding: 3rem 1rem;
+  background: white;
+  text-align: center;
+}
+
+.affiliates-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.affiliate img {
+  padding:10px;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.swu{
+  background-color: purple;
+}
+
+.affiliate p {
+  max-width: 180px;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+/* Call to Action Section */
+.cta {
+  background: #1C3D90;
+  color: white;
+  padding: 3rem 1rem;
+}
+
+.cta-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.cta-text {
+  flex: 2;
+}
+
+.cta-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-action {
+  flex: 1;
+  text-align: right;
+  min-width: 200px;
+}
+
+.btn-apply {
+  background: #fff;
+  color: #1C3D90;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.btn-apply:hover {
+  background: #f0f0f0;
+}
+
+footer {
+  background: #1C3D90;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .testimonial-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .testimonial-text {
+    text-align: center;
+  }
+
+  .cta-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-action {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 40px;
+  }
+}
