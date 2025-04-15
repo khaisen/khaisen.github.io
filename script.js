@@ -18,7 +18,7 @@ function showTestimonial(index) {
   });
 }
 
-function startSlider() {
+function startTestiSlider() {
   interval = setInterval(() => {
     currentIndex = (currentIndex + 1) % testimonials.length;
     showTestimonial(currentIndex);
@@ -31,7 +31,7 @@ function stopSlider() {
 
 document.getElementById('pauseSliderBtn').addEventListener('click', function () {
   if (isPaused) {
-    startSlider();
+    startTestiSlider();
     this.textContent = '⏸ Pause';
   } else {
     stopSlider();
@@ -41,4 +41,41 @@ document.getElementById('pauseSliderBtn').addEventListener('click', function () 
 });
 
 showTestimonial(currentIndex);
-startSlider();
+startTestiSlider();
+
+// Event Slider
+const eventSlides = document.querySelectorAll('.event-slide');
+const dotContainer = document.getElementById('event-dots');
+let eventIndex = 0;
+
+function showEventSlide(index) {
+  eventSlides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+  Array.from(dotContainer.children).forEach((dot, i) => {
+    dot.classList.toggle('active-dot', i === index);
+  });
+}
+
+function createDots() {
+  eventSlides.forEach((_, i) => {
+    const dot = document.createElement('span');
+    dot.addEventListener('click', () => {
+      eventIndex = i;
+      showEventSlide(eventIndex);
+    });
+    dotContainer.appendChild(dot);
+  });
+}
+
+function startEventSlider() {
+  setInterval(() => {
+    eventIndex = (eventIndex + 1) % eventSlides.length;
+    showEventSlide(eventIndex);
+  }, 2000);
+}
+
+// Initialize
+createDots();
+showEventSlide(eventIndex);
+startEventSlider();
