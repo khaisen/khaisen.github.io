@@ -1,0 +1,245 @@
+/* Global Resets and Font */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #f4f6fa;
+  color: #12264C;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Floating Button */
+.jump-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #1C3D90;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  z-index: 1000;
+  transition: background 0.3s;
+}
+
+.jump-button:hover {
+  background: #2A57C4;
+}
+
+/* Navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1C3D90;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  height: 50px;
+  object-fit: contain;
+  background-color: white;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #FFD700;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+/* Hero Section */
+.admission-hero {
+  background: linear-gradient(to right, #1C3D90, #2A57C4);
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem 4rem;
+}
+
+.admission-hero h1 {
+  font-size: 2.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.admission-hero p {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Admission Grid */
+.admission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admission-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s;
+}
+
+.admission-box:hover {
+  transform: translateY(-5px);
+}
+
+.admission-box h2 {
+  margin-bottom: 1rem;
+  color: #1C3D90;
+  font-size: 1.5rem;
+}
+
+.admission-box p,
+.admission-box li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.admission-box ul {
+  padding-left: 1.25rem;
+}
+
+.btn-apply {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #1C3D90;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-apply:hover {
+  background-color: #2A57C4;
+}
+
+/* Important Dates Section */
+.important-dates {
+  background: #2A57C4;
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.important-dates h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.important-dates ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+}
+
+.important-dates li {
+  margin-bottom: 0.5rem;
+}
+
+/* Scholarship CTA */
+.scholarship-hero {
+  background: #1C3D90;
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.scholarship-hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.scholarship-hero p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+footer {
+  background: #12264C;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    display: none;
+    width: 100%;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  .admission-hero h1 {
+    font-size: 2.2rem;
+  }
+  .admission-hero p {
+    font-size: 1rem;
+  }
+  .admission-grid {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 40px;
+  }
+  .admission-box h2 {
+    font-size: 1.25rem;
+  }
+  .btn-apply {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
+}

@@ -40,6 +40,7 @@ header {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  
 }
 
 .nav-links li a {
@@ -48,6 +49,8 @@ header {
   font-size: 1.1rem;
   font-weight: 700;
   transition: color 0.3s;
+  padding: 0 10px; 
+  border-right: 1px solid #ccc;
 }
 
 .nav-links li a:hover {
