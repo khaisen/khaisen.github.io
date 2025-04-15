@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Academic | Glory Education Center</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Ubuntu', sans-serif;
+      background: #f5f7fb;
+      color: #12264C;
+    }
+
+    .academic-container {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .academic-menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+
+    .academic-menu button {
+      padding: 0.75rem 1.5rem;
+      background-color: #1C3D90;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .academic-menu button.active {
+      background-color: #2A57C4;
+    }
+
+    .academic-section {
+      display: none;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .academic-section.active {
+      display: block;
+    }
+
+    .fee-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .fee-table th, .fee-table td {
+      border: 1px solid #ccc;
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    .fee-table th {
+      background-color: #f0f0f0;
+    }
+
+    .highlight-note {
+      margin-top: 1.5rem;
+      background-color: #f9f9f9;
+      padding: 1rem;
+      border-left: 5px solid #1C3D90;
+      font-style: italic;
+      color: #333;
+    }
+
+    .hero-slider {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-slider img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 1s;
+    }
+
+    .hero-slider img.active {
+      display: block;
+      position: relative;
+    }
+
+    footer {
+      background: #1C3D90;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1C3D90;
+      padding: 1rem 2rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links li a.active {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="GEC Logo" style="height: 50px; background:white; padding:4px; border-radius:6px;">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="admission.html" >Admission</a></li>
+        <li><a href="academic.html" class="active">Academic</a></li>
+        <li><a href="faculity.html">Faculity</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Image Slider -->
+  <div class="hero-slider" id="heroSlider">
+    <img src="images/start-your-mission-2.png" alt="Event 1" class="active">
+    <img src="images/start-your-mission-1.png" alt="Event 2">
+  </div>
+
+  <section class="academic-container">
+    <div class="academic-menu">
+      <button data-target="bachelor" class="active">Bachelor Programs</button>
+      <button data-target="diploma">Diploma Programs</button>
+      <button data-target="master">Master Programs</button>
+      <button data-target="vocational">Vocational Programs</button>
+    </div>
+
+    <div id="bachelor" class="academic-section active">
+      <h2>Bachelor of Theology (B.Th)</h2>
+      <p>The Bachelor of Theology is a 3-year program preparing students for ministry and church leadership roles through strong biblical and theological foundation.</p>
+      <p>Admission Fees (New): 7700 INR</p>
+      <ul>
+        <li>Admission: 4000</li>
+        <li>Security: 3000</li>
+        <li>ID Card: 400</li>
+        <li>Form: 300</li>
+      </ul>
+      <p>Old Students: 1000 INR</p>
+      <table class="fee-table">
+        <tr><th>Monthly Fee</th><td>5000 INR</td></tr>
+        <tr><th>Yearly Fee (8 months)</th><td>40,000 INR</td></tr>
+        <tr><th>Duration</th><td>3 Years</td></tr>
+      </table>
+      <div class="highlight-note">
+        All fees include hostel accommodation, food service, and WiFi access.
+      </div>
+    </div>
+
+    <div id="diploma" class="academic-section">
+      <h2>Diploma in Music</h2>
+      <p>This one-year diploma focuses on using music for worship and ministry with strong theory and practice in Christian music.</p>
+      <p>Admission Fee: 7700 INR</p>
+      <table class="fee-table">
+        <tr><th>Program Duration</th><td>1 Year</td></tr>
+        <tr><th>Total Fee</th><td>60,000 INR</td></tr>
+      </table>
+      <div class="highlight-note">
+        All fees include hostel accommodation, food service, and WiFi access.
+      </div>
+    </div>
+
+    <div id="master" class="academic-section">
+      <h2>Master Programs</h2>
+      <p>Advanced theological education through M.Div and M.Th programs for church leadership, teaching, and deeper ministry involvement.</p>
+      <p>Admission (New): 7700 INR<br>Old Students: 1000 INR</p>
+      <table class="fee-table">
+        <tr><th>Program</th><th>Monthly Fee</th><th>Total (8 Months)</th></tr>
+        <tr><td>M.Div</td><td>6250 INR</td><td>50,000 INR</td></tr>
+        <tr><td>M.Th</td><td>7500 INR</td><td>60,000 INR</td></tr>
+      </table>
+      <div class="highlight-note">
+        All fees include hostel accommodation, food service, and WiFi access.
+      </div>
+    </div>
+
+    <div id="vocational" class="academic-section">
+      <h2>Vocational Programs</h2>
+      <p>Short-term programs to develop practical skills in Computer, Hindi, English, or Music. Ideal for lay leaders and youth.</p>
+      <p>Admission Fee: 2200 INR (includes Admission, Security & Form)</p>
+      <table class="fee-table">
+        <tr><th>Program</th><th>Monthly Fee</th></tr>
+        <tr><td>Computer/Hindi/English</td><td>7000 INR</td></tr>
+        <tr><td>Music</td><td>8000 INR</td></tr>
+      </table>
+      <div class="highlight-note">
+        All fees include hostel accommodation, food service, and WiFi access.
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Glory Education Center. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const menuButtons = document.querySelectorAll('.academic-menu button');
+    const sections = document.querySelectorAll('.academic-section');
+    menuButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        menuButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        sections.forEach(sec => sec.classList.remove('active'));
+        document.getElementById(btn.dataset.target).classList.add('active');
+      });
+    });
+
+    // Slider
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('#heroSlider img');
+    function showSlides() {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add('active');
+    }
+    setInterval(showSlides, 3000);
+  </script>
+</body>
+</html>
