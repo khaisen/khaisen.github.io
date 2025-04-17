@@ -1,93 +1,191 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>About Us | Glory Education Center</title>
-
-
-<link href="assets/css/style.min.css" rel="stylesheet"/><script defer="" src="assets/js/script.min.js"></script></head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Glory Education Center</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f9fc;
+      color: #12264C;
+    }
+    header, footer {
+      background: #1C3D90;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      padding: 0;
+    }
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-links li a.active {
+      border-bottom: 2px solid #FFD700;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?fit=crop&w=1500&h=500') center/cover;
+      color: white;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    .section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    .section h2 {
+      color: #1C3D90;
+    }
+    .core-values {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .core-values div {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      flex: 1 1 200px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .cta-section {
+      background: #eef3fa;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .cta-section form {
+      max-width: 500px;
+      margin: auto;
+      text-align: left;
+    }
+    .cta-section input, .cta-section textarea, .cta-section select {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .cta-section button {
+      background: #1C3D90;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
 <body>
-<header>
-<nav class="navbar">
-<div class="logo">
-<a href="index.html"><img alt="GEC Logo" src="images/logo.png" style="height: 50px; background:white; padding:4px; border-radius:6px;"/></a>
-</div>
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="admission.html">Admission</a></li>
-<li><a href="academic.html">Academic</a></li>
-<li><a href="faculty.html">Faculty</a></li>
-<li><a class="active" href="about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</header>
-<section class="hero">
-<h1>About Glory Education Center</h1>
-<p>Equipping Servant Leaders for a Christ-Centered Future</p>
-</section>
-<section class="section">
-<h2>Our Story</h2>
-<p>Glory Education Center (GEC) was established in 2012 in Yangon, Myanmar with a vision to raise up biblically grounded, spiritually mature, and practically equipped leaders. From humble beginnings, GEC has grown into a vibrant educational community offering degree and vocational programs to students from across the region.</p>
-</section>
-<section class="section">
-<h2>Mission &amp; Vision</h2>
-<p><strong>Our Mission:</strong> To disciple and educate students with a blend of biblical knowledge, spiritual maturity, and practical leadership skills for kingdom service.</p>
-<p><strong>Our Vision:</strong> To be a leading center of biblical education in Myanmar, transforming communities through Gospel-centered leadership and holistic training.</p>
-</section>
-<section class="section">
-<h2>Core Values</h2>
-<div class="core-values">
-<div><strong>Christ-Centered Education</strong><br/>All we do flows from our faith in Jesus.</div>
-<div><strong>Servant Leadership</strong><br/>We lead by serving others with humility.</div>
-<div><strong>Academic Excellence</strong><br/>Committed to high-quality theological and practical training.</div>
-<div><strong>Integrity</strong><br/>We value honesty, character, and accountability.</div>
-<div><strong>Community</strong><br/>We grow together in faith and fellowship.</div>
-</div>
-</section>
-<section class="cta-section">
-<h2>Media &amp; Partnership Inquiry</h2>
-<p>If you're interested in connecting with us for media, ministry, or partnership opportunities, please fill out the form below.</p>
-<form action="#" method="post">
-<input placeholder="Your Name" required="" type="text"/>
-<input placeholder="Your Email" required="" type="email"/>
-<input placeholder="Organization / Ministry (optional)" type="text"/>
-<select>
-<option>Subject</option>
-<option>Media Inquiry</option>
-<option>Partnership</option>
-<option>Guest Invitation</option>
-</select>
-<textarea placeholder="Your Message..." required="" rows="4"></textarea>
-<button type="submit">Send Message</button>
-</form>
-</section>
-<section class="section">
-<h2>Our Leadership</h2>
-<div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: center;">
-<img alt="Founder Photo" src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?fit=crop&amp;w=300&amp;h=300" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%;"/>
-<div>
-<h3>Rev. Samuel Tun</h3>
-<p>Founder &amp; President</p>
-<p>Rev. Samuel has a heart for discipleship and education. With over two decades in ministry, he established Glory Education Center to equip leaders who will serve in churches, missions, and communities across Myanmar and beyond.</p>
-<blockquote><em>“True leadership begins with a heart to serve.”</em></blockquote>
-</div>
-</div>
-</section>
-<section class="section">
-<h2>What Makes Us Different</h2>
-<ul style="line-height: 1.8; font-size: 1rem;">
-<li><strong>All-inclusive facilities:</strong> Students receive hostel accommodation, food service, and WiFi access within the tuition structure.</li>
-<li><strong>Diverse academic options:</strong> We offer theological degrees (B.Th, M.Div, M.Th), music diplomas, and vocational programs in English, Hindi, computer, and more.</li>
-<li><strong>Faith-based learning:</strong> All programs are rooted in a biblical worldview with an emphasis on servant leadership and Christian integrity.</li>
-<li><strong>Scholarships available:</strong> Need-based and merit-based scholarships help make theological education more accessible.</li>
-<li><strong>Community and mentorship:</strong> Small class sizes and pastoral mentorship ensure deep spiritual formation.</li>
-</ul>
-</section>
-<footer>
-<p>© 2025 Glory Education Center. All Rights Reserved.</p>
-</footer>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt="GEC Logo" style="height: 50px; background:white; padding:4px; border-radius:6px;"></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="academic.html">Academic</a></li>
+        <li><a href="faculty.html">Faculty</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>About Glory Education Center</h1>
+    <p>Equipping Servant Leaders for a Christ-Centered Future</p>
+  </section>
+
+  <section class="section">
+    <h2>Our Story</h2>
+    <p>Glory Education Center (GEC) was established in 2012 in Yangon, Myanmar with a vision to raise up biblically grounded, spiritually mature, and practically equipped leaders. From humble beginnings, GEC has grown into a vibrant educational community offering degree and vocational programs to students from across the region.</p>
+  </section>
+
+  <section class="section">
+    <h2>Mission & Vision</h2>
+    <p><strong>Our Mission:</strong> To disciple and educate students with a blend of biblical knowledge, spiritual maturity, and practical leadership skills for kingdom service.</p>
+    <p><strong>Our Vision:</strong> To be a leading center of biblical education in Myanmar, transforming communities through Gospel-centered leadership and holistic training.</p>
+  </section>
+
+  <section class="section">
+    <h2>Core Values</h2>
+    <div class="core-values">
+      <div><strong>Christ-Centered Education</strong><br>All we do flows from our faith in Jesus.</div>
+      <div><strong>Servant Leadership</strong><br>We lead by serving others with humility.</div>
+      <div><strong>Academic Excellence</strong><br>Committed to high-quality theological and practical training.</div>
+      <div><strong>Integrity</strong><br>We value honesty, character, and accountability.</div>
+      <div><strong>Community</strong><br>We grow together in faith and fellowship.</div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Media & Partnership Inquiry</h2>
+    <p>If you're interested in connecting with us for media, ministry, or partnership opportunities, please fill out the form below.</p>
+    <form action="#" method="post">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <input type="text" placeholder="Organization / Ministry (optional)" />
+      <select>
+        <option>Subject</option>
+        <option>Media Inquiry</option>
+        <option>Partnership</option>
+        <option>Guest Invitation</option>
+      </select>
+      <textarea rows="4" placeholder="Your Message..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <section class="section">
+    <h2>Our Leadership</h2>
+    <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: center;">
+      <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?fit=crop&w=300&h=300" alt="Founder Photo" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%;">
+      <div>
+        <h3>Rev. Samuel Tun</h3>
+        <p>Founder & President</p>
+        <p>Rev. Samuel has a heart for discipleship and education. With over two decades in ministry, he established Glory Education Center to equip leaders who will serve in churches, missions, and communities across Myanmar and beyond.</p>
+        <blockquote><em>“True leadership begins with a heart to serve.”</em></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>What Makes Us Different</h2>
+    <ul style="line-height: 1.8; font-size: 1rem;">
+      <li><strong>All-inclusive facilities:</strong> Students receive hostel accommodation, food service, and WiFi access within the tuition structure.</li>
+      <li><strong>Diverse academic options:</strong> We offer theological degrees (B.Th, M.Div, M.Th), music diplomas, and vocational programs in English, Hindi, computer, and more.</li>
+      <li><strong>Faith-based learning:</strong> All programs are rooted in a biblical worldview with an emphasis on servant leadership and Christian integrity.</li>
+      <li><strong>Scholarships available:</strong> Need-based and merit-based scholarships help make theological education more accessible.</li>
+      <li><strong>Community and mentorship:</strong> Small class sizes and pastoral mentorship ensure deep spiritual formation.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Glory Education Center. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>

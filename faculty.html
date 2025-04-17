@@ -1,94 +1,260 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Faculty | Glory Education Center</title>
-
-
-<link href="assets/css/style.min.css" rel="stylesheet"/><script defer="" src="assets/js/script.min.js"></script></head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faculty | Glory Education Center</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      background: #f4f6fb;
+      color: #12264C;
+      margin: 0;
+      padding: 0;
+    }
+    .faculty-hero {
+      background: #1C3D90;
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .dept-filter {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    .dept-filter button {
+      background-color: #1C3D90;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.25rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .faculty-section {
+      display: none;
+      padding: 1rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .faculty-section.active {
+      display: block;
+    }
+    .search-box {
+      display: block;
+      margin: 1rem auto;
+      padding: 0.5rem 1rem;
+      width: 100%;
+      max-width: 400px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .faculty-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .faculty-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      width: 250px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      cursor: pointer;
+    }
+    .faculty-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+    .faculty-card h3 {
+      margin: 0.5rem 0 0.25rem;
+    }
+    .faculty-card p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: white;
+      border-radius: 10px;
+      max-width: 600px;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+    .modal-content img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+    .modal-content h3 {
+      margin-top: 0.5rem;
+    }
+    .modal-content p {
+      color: #333;
+      font-size: 0.95rem;
+    }
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 1.5rem;
+      color: #888;
+      cursor: pointer;
+    }
+  </style>
+</head>
 <body>
-<header>
-<nav class="navbar">
-<div class="logo">
-<a href="index.html">
-<img alt="Glory Education Center Logo" src="images/logo.png" style="height: 50px; background:white; padding:4px; border-radius:6px;"/>
-</a>
-</div>
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="admission.html">Admission</a></li>
-<li><a href="academic.html">Academic</a></li>
-<li><a class="active" href="faculty.html">Faculty</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</header>
-<section class="faculty-hero">
-<h1>Meet Our Faculty</h1>
-<p>Empowered by faith, dedicated to excellence in biblical and practical education.</p>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Glory Education Center Logo" style="height: 50px; background:white; padding:4px; border-radius:6px;">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="academic.html">Academic</a></li>
+        <li><a href="faculty.html" class="active">Faculty</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="faculty-hero">
+    <h1>Meet Our Faculty</h1>
+    <p>Empowered by faith, dedicated to excellence in biblical and practical education.</p>
+  </section>
+
+  <div class="dept-filter">
+    <button data-dept="theology">Biblical Studies</button>
+    <button data-dept="music">Music & Worship</button>
+    <button data-dept="vocational">Vocational Training</button>
+    <button data-dept="language">Language Studies</button>
+  </div>
+
+  <div class="faculty-section" id="theology">
+    <h2>Biblical Studies</h2>
+    <input type="text" placeholder="Search instructors..." class="search-box" data-target="theology">
+    <div class="faculty-grid">
+      <div class="faculty-card" data-name="Rev. John Doe" data-title="Theology & Leadership" data-bio="Rev. John Doe has over 15 years of experience teaching and mentoring students in pastoral ministry. He holds degrees in Theology and Divinity." data-img="https://images.unsplash.com/photo-1581090700227-1e8c361b84c9?fit=crop&w=600&h=400">
+        <img src="https://images.unsplash.com/photo-1581090700227-1e8c361b84c9?fit=crop&w=600&h=400" alt="John Doe">
+        <h3>Rev. John Doe</h3>
+        <p>Theology & Leadership</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faculty-section" id="music">
+    <h2>Music & Worship</h2>
+    <input type="text" placeholder="Search instructors..." class="search-box" data-target="music">
+    <div class="faculty-grid">
+      <div class="faculty-card" data-name="Samuel Lee" data-title="Worship Leadership" data-bio="Samuel Lee is a passionate musician with a Master’s in Worship Arts. He trains students in both vocal and instrumental ministry." data-img="https://images.unsplash.com/photo-1607746882042-944635dfe10e?fit=crop&w=600&h=400">
+        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?fit=crop&w=600&h=400" alt="Samuel Lee">
+        <h3>Samuel Lee</h3>
+        <p>Worship Leadership</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="facultyModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <img id="modalImg" src="" alt="">
+      <h3 id="modalName"></h3>
+      <p id="modalTitle"></p>
+      <p id="modalBio"></p>
+    </div>
+  </div>
+
+  
+  <section style="max-width: 1100px; margin: 2rem auto; padding: 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; color: #12264C;">
+  <!-- News Feed -->
+  <div style="background: white; border-radius: 8px; padding: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
+    <h3>Latest News & Events</h3>
+    <ul style="list-style: disc; padding-left: 1.5rem;">
+      <li>Orientation for new students begins July 5th.</li>
+      <li>Music Department Concert – August 12th.</li>
+      <li>Theology guest lecture on Biblical Ethics – Sept 1st.</li>
+      <li>Annual Thanksgiving Service – Oct 22nd.</li>
+    </ul>
+  </div>
+
+  <!-- Photo Slider -->
+  <div style="position: relative; overflow: hidden; height: 300px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
+    <div id="photoSlider" style="display: flex; width: 300%; transition: transform 1s ease-in-out;">
+      <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?fit=crop&w=600&h=300" style="width: 100%; object-fit: cover;">
+      <img src="https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?fit=crop&w=600&h=300" style="width: 100%; object-fit: cover;">
+      <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?fit=crop&w=600&h=300" style="width: 100%; object-fit: cover;">
+    </div>
+  </div>
 </section>
-<div class="dept-filter">
-<button data-dept="theology">Biblical Studies</button>
-<button data-dept="music">Music &amp; Worship</button>
-<button data-dept="vocational">Vocational Training</button>
-<button data-dept="language">Language Studies</button>
-</div>
-<div class="faculty-section" id="theology">
-<h2>Biblical Studies</h2>
-<input class="search-box" data-target="theology" placeholder="Search instructors..." type="text"/>
-<div class="faculty-grid">
-<div class="faculty-card" data-bio="Rev. John Doe has over 15 years of experience teaching and mentoring students in pastoral ministry. He holds degrees in Theology and Divinity." data-img="https://images.unsplash.com/photo-1581090700227-1e8c361b84c9?fit=crop&amp;w=600&amp;h=400" data-name="Rev. John Doe" data-title="Theology &amp; Leadership">
-<img alt="John Doe" src="https://images.unsplash.com/photo-1581090700227-1e8c361b84c9?fit=crop&amp;w=600&amp;h=400"/>
-<h3>Rev. John Doe</h3>
-<p>Theology &amp; Leadership</p>
-</div>
-</div>
-</div>
-<div class="faculty-section" id="music">
-<h2>Music &amp; Worship</h2>
-<input class="search-box" data-target="music" placeholder="Search instructors..." type="text"/>
-<div class="faculty-grid">
-<div class="faculty-card" data-bio="Samuel Lee is a passionate musician with a Master’s in Worship Arts. He trains students in both vocal and instrumental ministry." data-img="https://images.unsplash.com/photo-1607746882042-944635dfe10e?fit=crop&amp;w=600&amp;h=400" data-name="Samuel Lee" data-title="Worship Leadership">
-<img alt="Samuel Lee" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?fit=crop&amp;w=600&amp;h=400"/>
-<h3>Samuel Lee</h3>
-<p>Worship Leadership</p>
-</div>
-</div>
-</div>
-<div class="modal" id="facultyModal">
-<div class="modal-content">
-<span class="close-modal" onclick="closeModal()">×</span>
-<img alt="" id="modalImg" src=""/>
-<h3 id="modalName"></h3>
-<p id="modalTitle"></p>
-<p id="modalBio"></p>
-</div>
-</div>
-<section style="max-width: 1100px; margin: 2rem auto; padding: 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; color: #12264C;">
-<!-- News Feed -->
-<div style="background: white; border-radius: 8px; padding: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
-<h3>Latest News &amp; Events</h3>
-<ul style="list-style: disc; padding-left: 1.5rem;">
-<li>Orientation for new students begins July 5th.</li>
-<li>Music Department Concert – August 12th.</li>
-<li>Theology guest lecture on Biblical Ethics – Sept 1st.</li>
-<li>Annual Thanksgiving Service – Oct 22nd.</li>
-</ul>
-</div>
-<!-- Photo Slider -->
-<div style="position: relative; overflow: hidden; height: 300px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
-<div id="photoSlider" style="display: flex; width: 300%; transition: transform 1s ease-in-out;">
-<img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?fit=crop&amp;w=600&amp;h=300" style="width: 100%; object-fit: cover;"/>
-<img src="https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?fit=crop&amp;w=600&amp;h=300" style="width: 100%; object-fit: cover;"/>
-<img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?fit=crop&amp;w=600&amp;h=300" style="width: 100%; object-fit: cover;"/>
-</div>
-</div>
-</section>
+
 <footer>
-<p style="background:#1C3D90; color:white; text-align:center; padding:1rem; margin-top:2rem;">© 2025 Glory Education Center</p>
+  <p style="background:#1C3D90; color:white; text-align:center; padding:1rem; margin-top:2rem;">&copy; 2025 Glory Education Center</p>
 </footer>
 
+  <script>
+    // Simple Photo Slider
+  let currentIndex = 0;
+  const slider = document.getElementById('photoSlider');
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % 3;
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }, 3000);
+    document.querySelectorAll('.dept-filter button').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.faculty-section').forEach(section => section.classList.remove('active'));
+        document.getElementById(button.dataset.dept).classList.add('active');
+      });
+    });
+
+    document.querySelectorAll('.search-box').forEach(input => {
+      input.addEventListener('input', e => {
+        const target = e.target.dataset.target;
+        const keyword = e.target.value.toLowerCase();
+        document.querySelectorAll(`#${target} .faculty-card`).forEach(card => {
+          const content = card.textContent.toLowerCase();
+          card.style.display = content.includes(keyword) ? 'block' : 'none';
+        });
+      });
+    });
+
+    document.querySelectorAll('.faculty-card').forEach(card => {
+      card.addEventListener('click', () => {
+        document.getElementById('modalImg').src = card.dataset.img;
+        document.getElementById('modalName').textContent = card.dataset.name;
+        document.getElementById('modalTitle').textContent = card.dataset.title;
+        document.getElementById('modalBio').textContent = card.dataset.bio;
+        document.getElementById('facultyModal').style.display = 'flex';
+      });
+    });
+
+    function closeModal() {
+      document.getElementById('facultyModal').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
