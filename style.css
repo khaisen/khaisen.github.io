@@ -53,8 +53,9 @@ header {
   border-right: 1px solid #ccc;
 }
 
-.nav-links li a:hover {
-  color: #2A57C4;
+.nav-links li a:hover,
+.nav-links li a.active {
+  text-decoration: underline;
 }
 
 .menu-toggle {
